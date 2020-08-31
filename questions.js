@@ -70,6 +70,7 @@ class Question {
             back.style.backgroundColor='red';
             this.answer=userAnswer;
             score-=1;
+            
         }
         else {
             document.getElementById('option'+index).style.backgroundColor="green";
@@ -78,6 +79,7 @@ class Question {
             this.answer=true;
             score+=2;
         }
+        console.log(score);
     }
 }
 

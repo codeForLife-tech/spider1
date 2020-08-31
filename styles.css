@@ -156,6 +156,8 @@ body {
 
   .content {
     font-size: 4rem;
+    color: blue;
+    text-align: center;
   }
 
   .content input {

@@ -43,8 +43,10 @@ function plusQues(change) {
     }
         
     var el=document.getElementsByClassName("inside")[0];
-    el.classList.remove('trans');   
+    el.classList.remove('trans');  
+    console.log(index);
     index+=change;
+    console.log(index);
     questionSet[index].showQuestion(index);
 }
 init();
