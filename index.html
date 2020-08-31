@@ -17,8 +17,11 @@
       
     </ul>
 </div>
+
+<p id="timer"></p>
 <div class='content'>
-  <input type="text" class="in" name="nameOfPlayer">
+  <h5>How well do you know about COVID-19?</h5>
+  <input type="text" class="in" name="nameOfPlayer" placeholder="Enter your name">
   <button class="btn" onclick="startGame()">PLAY</button>
 <div class="question-card">
     <div class="inside">
@@ -39,8 +42,9 @@
     <a class="prev" onclick="plusQues(-1)">&#10094;</a>
     <a class="next" onclick="plusQues(1)">&#10095;</a> 
   </div>
-  <button class="btn" onclick="displayScore()">Submit</button>
+  <button class="btn done" onclick="displayScore()">Submit</button>
   </div>
+  <button class="btn regame" onclick="window.location.reload()">Start again</button>
 <script src="questions.js"></script>
 <script src="questionsAndOptions.js"></script>
 <script src="index.js"></script>

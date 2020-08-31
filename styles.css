@@ -10,6 +10,9 @@ body {
     background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
 }
 
+h5 {
+  margin: 15px;
+}
 #sideBar {
   z-index: 100;
   position: fixed;
@@ -149,14 +152,15 @@ body {
     cursor: pointer;
     border: 1px solid transparent;
     padding: .375rem .75rem;
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin: 5px;
-    border-radius: 10%;
+    border-radius: 5%;
+    outline: none;
   }
 
   .content {
     font-size: 4rem;
-    color: blue;
+    color: darkmagenta;
     text-align: center;
   }
 
@@ -167,4 +171,25 @@ body {
     border-bottom: 2px solid green;
     background: transparent;
     outline: none;
+  }
+
+  #timer {
+    position: fixed;
+    top: 0;
+    color: red;
+    font-weight: bolder;
+    font-size: xxx-large;
+    right: 0;
+    margin: 0;
+  }
+  .replay {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+  }
+
+  .regame {
+    position: fixed;
+    right: 0;
+    bottom: 0;
   }

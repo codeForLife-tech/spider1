@@ -17,20 +17,27 @@ var questionSet=[];
 var index=0;
 function init() {
     element=document.getElementById("sideBar").style.display="none";
+    document.getElementsByClassName('regame')[0].style.display="none";
     document.getElementsByClassName('question-card')[0].style.display="none";
     document.getElementsByClassName("btn")[1].style.display="none";
 }
 function startGame() {
     document.getElementById("sideBar").style.display="";
+    
     document.getElementsByClassName('in')[0].style.display="none";
     document.getElementsByClassName("btn")[0].style.display="none";
-    document.getElementsByClassName('question-card')[0].style.display="";
-    document.getElementsByClassName("btn")[1].style.display="";
+    
     name=(document.getElementsByClassName('in')[0].value!="")?document.getElementsByClassName('in')[0].value:"You";
     playGame();
 }
+const replayBtn = document.querySelector('.replay');
+const display = document.querySelector('#timer');
 function playGame() {
     score=0;
+    document.getElementsByClassName('question-card')[0].style.display="";
+    document.getElementsByClassName("btn")[1].style.display="";
+    var timeInMin = 600;
+    startTimer(timeInMin, display);
     var questions=new Questions(arr, numInQuestionBank);
     questionSet=questions.generateRandomQuestionSet(numInQuestionBank);
     questionSet[index].showQuestion(0);
@@ -48,5 +55,22 @@ function plusQues(change) {
     index+=change;
     console.log(index);
     questionSet[index].showQuestion(index);
+}
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    let t=setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            clearInterval(t);
+            document.getElementsByClassName("done")[0].click();
+        }
+    }, 1000);
 }
 init();

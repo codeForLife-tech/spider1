@@ -12,12 +12,14 @@ function toggle(n) {
 }
 
 function displayScore() {
+    document.getElementsByClassName('regame')[0].style.display="";
+    display.style.display="none";
     element=document.getElementById("sideBar");
-    element.parentNode.removeChild(element);
+    element.style.display='none';
     element=document.getElementsByClassName("question-card")[0];
-    element.parentNode.removeChild(element);
+    element.style.display='none';
     element=document.getElementsByClassName("btn")[1];
-    element.parentNode.removeChild(element);
+    element.style.display='none';
     element=document.getElementsByClassName("content")[0];
     
     var highScore=JSON.parse(localStorage.getItem("score"));
